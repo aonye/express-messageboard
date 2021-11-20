@@ -24,8 +24,8 @@ router.get('/new', (req, res, next) => {
 });
 
 router.post('/new', (req, res, next) => {
-  res.send('hello world');
+  messages.push({ text: req.body.message, user: req.body.author, added: new Date() });
+  res.redirect('/');
 });
-
 
 module.exports = router;
